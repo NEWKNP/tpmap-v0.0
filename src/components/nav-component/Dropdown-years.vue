@@ -1,24 +1,29 @@
 <template>
-    <div class="nav-left nav-item2">
+    <div class="nav-left nav-dd">
         <el-submenu index="2">
-            <div class="label text needsclick">ข้อมูลประจำปี</div>
-            <template slot="title">Workspace</template>
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
-            <el-menu-item index="2-3">item three</el-menu-item>
-            <el-submenu index="2-4">
-            <template slot="title">item four</template>
-            <el-menu-item index="2-4-1">item one</el-menu-item>
-            <el-menu-item index="2-4-2">item two</el-menu-item>
-            <el-menu-item index="2-4-3">item three</el-menu-item>
-            </el-submenu>
+          <template slot="title">
+              <div class="label text needsclick">ข้อมูลประจำปี</div>
+              <span class="stext">2561</span>
+          </template>
+          <el-menu-item v-for="y in years" v-on:click="changeYear" :label="y" :key="y">{{y}}</el-menu-item>
         </el-submenu>
     </div>
 </template>
 
 <script>
+const setYears = ['ปี 2559', 'ปี 2560', 'ปี 2561']
 export default {
-  name: 'Dropdown-years'
+  name: 'Dropdown-years',
+  data: function () {
+    return {
+      years: setYears
+    }
+  },
+  methods: {
+    changeYear: function (event) {
+      console.log(event)
+    }
+  }
 }
 </script>
 

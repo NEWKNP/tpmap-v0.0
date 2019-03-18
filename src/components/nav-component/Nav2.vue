@@ -5,7 +5,8 @@
                 class="el-menu-demo"
                 mode="horizontal"
                 menu-trigger="click"
-                unique-opened="true">
+                unique-opened="true"
+                collapse-transition="false">
                 <Dropdown-checkbox/>
                 <Dropdown-years/>
                 <Dropdown-province/>
@@ -44,6 +45,7 @@ export default {
 .nav2 {
     background-color: #ffffff;
     height: 2.5rem;
+    z-index: 2006;
     box-shadow: 4px 0 8px rgba(33, 33, 33, 0.2);
 }
 .in-nav2 {

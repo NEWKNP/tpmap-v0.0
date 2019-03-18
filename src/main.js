@@ -6,12 +6,14 @@ import router from './router'
 import Vuex from 'vuex'
 import VueD3 from 'vue2-d3'
 import VueMaterialIcon from 'vue-material-icon'
+import ElementUI from 'element-ui'
 import store from './store'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
 Vue.use(VueD3)
+Vue.use(ElementUI)
 Vue.component(VueMaterialIcon.name, VueMaterialIcon)
 
 /* eslint-disable no-new */

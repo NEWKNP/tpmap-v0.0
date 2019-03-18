@@ -1,24 +1,19 @@
 const state = {
-  dimensionNum: 5
+  dimensionNum: ['1', '1', '1', '1', '1'],
+  year: 2561
 }
 
 const getters = { }
 
 const actions = {
-  increaseDimension: ({ commit, state }, payload) => {
-    commit('INCREASE_DIMENSION_NUMBER')
-  },
-  decreaseDimension: ({ commit, state }, payload) => {
-    commit('DECREASE_DIMENSION_NUMBER')
+  setDimension: ({ commit, state }, payload) => {
+    commit('SET_DIMENSION_NUMBER', payload)
   }
 }
 
 const mutations = {
-  INCREASE_DIMENSION_NUMBER (state, payload) {
-    state.dimensionNum++
-  },
-  DECREASE_DIMENSION_NUMBER (state, payload) {
-    state.dimensionNum--
+  SET_DIMENSION_NUMBER (state, payload) {
+    state.dimensionNum = payload
   }
 }
 
