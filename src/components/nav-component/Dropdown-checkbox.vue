@@ -5,7 +5,7 @@
             <div class="label text needsclick">ค่าดัชนี ★</div>
             <span class="stext">{{checkList.length}} มิติ</span>
           </template>
-          <el-menu-item index="1-1" class="cb">
+          <el-menu-item index="1-1" class="cb" >
             <el-checkbox-group v-model="checkList">
               <el-checkbox
                 v-for="d in dimensions"
@@ -50,6 +50,7 @@ export default {
           this.temp_dimension[i] = '0'
         }
       }
+      console.log(this.dimensionNum)
       this.setDimension(this.temp_dimension)
     }
   }
@@ -101,16 +102,16 @@ export default {
     font-size: 1.6rem;
     font-weight: bold;
 }
-.dropdown-cb {
-  display: block;
-}
 .cb {
-  margin: .1rem 0;
-  padding: .3rem 0;
+  display: block;
   box-shadow: 4px 0 8px rgba(33, 33, 33, 0.2);
 }
 .each-cb {
   padding: .5rem 2rem;
   display: block;
+  cursor: pointer;
+}
+.each-cb:hover {
+  opacity: .5;
 }
 </style>
