@@ -3,7 +3,7 @@
         <el-submenu index="2">
           <template slot="title">
               <div class="label text needsclick">ข้อมูลประจำปี</div>
-              <span class="stext">{{yrs}}</span>
+              <span class="stext">{{year}}</span>
           </template>
           <div class="cb">
             <el-menu-item
@@ -26,8 +26,7 @@ export default {
   name: 'Dropdown-years',
   data: function () {
     return {
-      years: setYears,
-      yrs: 2561
+      years: setYears
     }
   },
   computed: {
@@ -36,12 +35,10 @@ export default {
     })
   },
   methods: {
-    ...mapActions({
-      setYear: 'navData/setYear'
-    }),
+    ...mapActions([
+      'setYear'
+    ]),
     changeYear: function (event) {
-      console.log(event)
-      this.yrs = event
       this.setYear(event)
     }
   }

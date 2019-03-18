@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 const dimensionOptions = ['สุขภาพ', 'ความเป็นอยู่', 'การศึกษา', 'รายได้', 'การเข้าถึงบริการภาครัฐ']
 export default {
   name: 'Dropdown-checkbox',
@@ -34,14 +34,14 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      dimensionNum: state => state.dimensionNum
-    })
+    ...mapGetters([
+      'getDimensionString'
+    ])
   },
   methods: {
-    ...mapActions({
-      setDimension: 'navData/setDimension'
-    }),
+    ...mapActions([
+      'setDimension'
+    ]),
     changeDimension: function () {
       for (var i = 0; i < this.dimensions.length; i++) {
         if (this.checkList.includes(this.dimensions[i])) {
@@ -50,8 +50,11 @@ export default {
           this.temp_dimension[i] = '0'
         }
       }
-      console.log(this.dimensionNum)
       this.setDimension(this.temp_dimension)
+      console.log(this.getDimensionString)
+    },
+    getDimensionString () {
+      return this.$store.getters.getDimensionString
     }
   }
 }
