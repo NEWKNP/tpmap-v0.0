@@ -5,7 +5,8 @@ const state = {
 }
 
 const getters = {
-  getDimensionString: state => state.dimensionString
+  getDimensionString: state => state.dimensionString,
+  getYear: state => state.year
 }
 
 const actions = {
