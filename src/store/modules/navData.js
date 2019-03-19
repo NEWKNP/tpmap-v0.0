@@ -1,6 +1,6 @@
 const state = {
   dimensionString: '11111',
-  year: 2561,
+  year: '2561',
   ID: '10'
 }
 
