@@ -41,14 +41,33 @@ In main.js file
 
 ``` bash
 import Vue from 'vue'
+import App from './App'
+import router from './router'
 import Vuex from 'vuex'
+import ElementUI from 'element-ui'
+import store from './store'
 import VueMaterialIcon from 'vue-material-icon'
 
 Vue.use(Vuex)
+Vue.use(ElementUI)
 Vue.component(VueMaterialIcon.name, VueMaterialIcon)
+
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>',
+  store
+})
 ```
 
 ## Get Started
+
+*please look in src folder if you want material codes
+    assets -> store things not involve web programming code
+    components -> store vue components
+    router -> vue link each component (please ignore this for beginner)
+    store -> store vuex workspace as js file
 
 ### External Guide
 
