@@ -73,10 +73,14 @@ Additional for github user (In VS code)
 ## Get Started
 
 *please look in src folder if you want material codes
-    assets -> store things not involve web programming code
-    components -> store vue components
-    router -> vue link each component (please ignore this for beginner)
-    store -> store vuex workspace as js file
+
+assets -> store things not involve web programming code
+
+components -> store vue components
+
+router -> vue link each component (please ignore this for beginner)
+ 
+store -> store vuex workspace as js file
 
 ### External Guide
 
