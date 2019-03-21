@@ -61,6 +61,15 @@ new Vue({
 })
 ```
 
+Additional for github user (In VS code)
+
+``` bash
+1st click source control 
+2nd type commit name
+3rd click true symbol
+4th command git push origin master
+```
+
 ## Get Started
 
 *please look in src folder if you want material codes
