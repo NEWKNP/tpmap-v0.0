@@ -8,6 +8,7 @@ import VueD3 from 'vue2-d3'
 import VueMaterialIcon from 'vue-material-icon'
 import ElementUI from 'element-ui'
 import store from './store'
+import * as d3 from 'd3'
 
 Vue.config.productionTip = false
 
@@ -22,5 +23,6 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-  store
+  store,
+  d3
 })
