@@ -63,7 +63,7 @@ new Vue({
 
 Additional for github user (In VS code)
 
-# install
+### install
 
 Thai language [guild](http://androidthai.in.th/git-and-github-article/191-github-on-vs-code.html)
 
