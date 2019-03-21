@@ -63,7 +63,12 @@ new Vue({
 
 Additional for github user (In VS code)
 
+# install
+
+Thai language [guild](http://androidthai.in.th/git-and-github-article/191-github-on-vs-code.html)
+
 ``` bash
+# usage
 1st click source control 
 2nd type commit name
 3rd click true symbol
