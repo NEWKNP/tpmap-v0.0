@@ -41,7 +41,7 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 
-#copy this import into js, vue file which need to implement d3.js
+# copy this import into js, vue file which need to implement d3.js
 import * as d3 from "d3"
 ```
 
