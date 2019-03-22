@@ -6,6 +6,8 @@
 
 *Note these commands are commanded thought VS code
 
+**Also this codes is not for usage but for study only
+
 ``` bash
 # install webpack + vue dependencies
 npm install -g vue-cli
@@ -19,6 +21,9 @@ npm i element-ui -S
 
 # install vuex
 npm install vuex --save
+
+# install d3.js
+npm install d3
 
 # may use material Icon
 npm install vue-material-icon
@@ -35,6 +40,9 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+#copy this import into js, vue file which need to implement d3.js
+import * as d3 from "d3"
 ```
 
 In main.js file
@@ -61,9 +69,9 @@ new Vue({
 })
 ```
 
-Additional for github user (In VS code)
+### Additional for github user (In VS code)
 
-### install
+#### install
 
 Thai language [guild](http://androidthai.in.th/git-and-github-article/191-github-on-vs-code.html)
 
