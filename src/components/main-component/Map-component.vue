@@ -13,11 +13,11 @@ export default {
   data: function () {},
   computed: {
     ...mapState({
-      // countryCommon: state => state.main.countryCommon,
-      // countryDynamic: state => state.main.countryDynamic,
-      // provinceCommon: state => state.main.provinceCommon,
-      // provinceDynamic: state => state.main.provinceDynamic,
-      // countryShape: state => state.main.countryShape
+      /* countryCommon: state => state.main.countryCommon,
+      countryDynamic: state => state.main.countryDynamic,
+      provinceCommon: state => state.main.provinceCommon,
+      provinceDynamic: state => state.main.provinceDynamic,
+      countryShape: state => state.main.countryShape */
     })
   },
   created: function () {
@@ -44,7 +44,7 @@ export default {
       const tempSvgMap = d3.select('.map-plain')
         .append('svg')
         .attr('class', 'svg-map')
-        .style('width', '35rem')
+        .style('width', '38rem')
         .style('height', '41.5rem')
 
       const tempProjection = geoAitoff()
@@ -59,6 +59,12 @@ export default {
         .attr('id', 'map-layer')
         .classed('map-layer', true)
       console.log(tempMapLayer)
+
+      /* console.log(this.countryCommon)
+      console.log(this.countryDynamic)
+      console.log(this.provinceCommon)
+      console.log(this.provinceDynamic)
+      console.log(this.countryShape) */
     }
   },
   mounted: function () {

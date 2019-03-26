@@ -3,7 +3,7 @@
         <el-submenu index="2">
           <template slot="title">
               <div class="label text needsclick">ข้อมูลประจำปี</div>
-              <span class="stext">{{getYear}}</span>
+              <span class="stext">{{year}}</span>
           </template>
           <div class="cb">
             <el-menu-item
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {mapState, mapGetters, mapActions} from 'vuex'
+import {mapState, mapActions} from 'vuex'
 const setYears = ['2559', '2560', '2561']
 export default {
   name: 'Dropdown-years',
@@ -31,11 +31,8 @@ export default {
   },
   computed: {
     ...mapState({
-      year: state => state.year
-    }),
-    ...mapGetters([
-      'getYear'
-    ])
+      year: state => state.nav.year
+    })
   },
   methods: {
     ...mapActions([
@@ -43,9 +40,6 @@ export default {
     ]),
     changeYear: function (event) {
       this.setYear(event)
-    },
-    getYear () {
-      return this.$store.getters.getYear
     }
   }
 }

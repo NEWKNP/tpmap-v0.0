@@ -1,4 +1,5 @@
 import * as d3 from 'd3'
+import prov from '../../assets/shape/prov.json'
 
 const state = {
   countryCommon: null,
@@ -10,22 +11,27 @@ const state = {
   amplurShape: null
 }
 
-const getters = { }
+const getters = {
+  getCountryCommon: state => state.countryCommon,
+  getCountryDynamic: state => state.countryDynamic,
+  getProvinceCommon: state => state.provinceCommon,
+  getProvinceDynamic: state => state.provinceDynamic,
+  getCountryShape: state => state.countryShape
+}
 
 const actions = {
   loadCountryCommon: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_common.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(mockName)
-      console.log(rows)
-      commit('SET_COUNTRY_COMMON', rows)
+      console.log(rows[0])
+      commit('SET_COUNTRY_COMMON', rows[0])
     })
   },
   loadCountryDynamic: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_11111.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(rows)
-      commit('SET_COUNTRY_DYNAMIC', rows)
+      console.log(rows[0])
+      commit('SET_COUNTRY_DYNAMIC', rows[0])
     })
   },
   loadProvinceCommon: ({ commit, state }) => {
@@ -43,11 +49,9 @@ const actions = {
     })
   },
   loadCountryShape: ({ commit, state }) => {
-    const mockName = 'https://s3-ap-southeast-1.amazonaws.com/tpmap0.0/shape/prov.json'
-    d3.json(mockName).then(function (rows) {
-      console.log(rows)
-      commit('SET_COUNTRY_SHAPE', rows)
-    })
+    console.log(prov)
+    console.log(prov.features)
+    commit('SET_COUNTRY_SHAPE', prov.features)
   }
 }
 

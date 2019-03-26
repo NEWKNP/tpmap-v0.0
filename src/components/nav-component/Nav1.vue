@@ -13,7 +13,7 @@
                 </el-menu-item>
                 <el-menu-item index="2" class="nav-right nav-item1 site-last-update">
                     <div class="label">อัพเดทข้อมูลล่าสุด</div>
-                    <div class="value">18 มี.ค. 2562</div>
+                    <div class="value">26 มี.ค. 2562</div>
                 </el-menu-item>
                 <el-menu-item index="3" class="nav-right nav-item1 search">
                     <vue-material-icon name="search" :size="20" :color="grey"></vue-material-icon>
