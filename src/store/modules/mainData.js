@@ -8,7 +8,9 @@ const state = {
   provinceDynamic: null,
   countryShape: null,
   provinceShape: null,
-  amplurShape: null
+  amplurShape: null,
+  // colorMap: d3.scaleLinear().domain(d3.range(0, 10)).range(d3.schemeRdYlBu[11])
+  colorMap: 'color'
 }
 
 const getters = {
@@ -49,7 +51,6 @@ const actions = {
     })
   },
   loadCountryShape: ({ commit, state }) => {
-    console.log(prov)
     console.log(prov.features)
     commit('SET_COUNTRY_SHAPE', prov.features)
   }

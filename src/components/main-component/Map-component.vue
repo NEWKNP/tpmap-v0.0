@@ -13,11 +13,12 @@ export default {
   data: function () {},
   computed: {
     ...mapState({
-      /* countryCommon: state => state.main.countryCommon,
+      countryCommon: state => state.main.countryCommon,
       countryDynamic: state => state.main.countryDynamic,
       provinceCommon: state => state.main.provinceCommon,
       provinceDynamic: state => state.main.provinceDynamic,
-      countryShape: state => state.main.countryShape */
+      countryShape: state => state.main.countryShape,
+      color: 'color'
     })
   },
   created: function () {
@@ -36,9 +37,7 @@ export default {
       'loadCountryShape'
     ]),
     renderMap: function () {
-      const tempColorMap = d3.scaleLinear()
-        .domain(d3.range(0, 10))
-        .range(d3.schemeRdYlBu[11])
+      const tempColorMap = this.color
       console.log(tempColorMap)
 
       const tempSvgMap = d3.select('.map-plain')

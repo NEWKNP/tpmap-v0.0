@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-*Note these commands are commanded thought VS code
+*Note these commands are commanded thought VS code terminal
 
 **Also this codes is not for usage but for study only
 
