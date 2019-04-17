@@ -13,12 +13,12 @@ export default {
   data: function () {},
   computed: {
     ...mapState({
-      countryCommon: state => state.main.countryCommon,
+      /* countryCommon: state => state.main.countryCommon,
       countryDynamic: state => state.main.countryDynamic,
       provinceCommon: state => state.main.provinceCommon,
       provinceDynamic: state => state.main.provinceDynamic,
       countryShape: state => state.main.countryShape,
-      color: 'color'
+      color: 'color' */
     })
   },
   created: function () {

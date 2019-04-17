@@ -8,9 +8,9 @@ const state = {
   provinceDynamic: null,
   countryShape: null,
   provinceShape: null,
-  amplurShape: null,
+  amplurShape: null
   // colorMap: d3.scaleLinear().domain(d3.range(0, 10)).range(d3.schemeRdYlBu[11])
-  colorMap: 'color'
+  // colorMap: 'color'
 }
 
 const getters = {
