@@ -25,51 +25,56 @@ const actions = {
   loadCountryCommon: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_common.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(rows[0])
+      // console.log(rows[0])
       commit('SET_COUNTRY_COMMON', rows[0])
     })
   },
   loadCountryDynamic: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_11111.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(rows[0])
+      // console.log(rows[0])
       commit('SET_COUNTRY_DYNAMIC', rows[0])
     })
   },
   loadProvinceCommon: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_province_common.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(rows)
+      // console.log(rows)
       commit('SET_PROVINCE_COMMON', rows)
     })
   },
   loadProvinceDynamic: ({ commit, state }) => {
     const mockName = 'https://www.tpmap.in.th/public/data/61/61_province_11111.csv'
     d3.csv(mockName).then(function (rows) {
-      console.log(rows)
+      // console.log(rows)
       commit('SET_PROVINCE_DYNAMIC', rows)
     })
   },
   loadCountryShape: ({ commit, state }) => {
-    console.log(prov.features)
+    // console.log(prov.features)
     commit('SET_COUNTRY_SHAPE', prov.features)
   }
 }
 
 const mutations = {
   SET_COUNTRY_COMMON (state, data) {
+    console.log(data)
     state.countryCommon = data
   },
   SET_COUNTRY_DYNAMIC (state, data) {
+    console.log(data)
     state.countryDynamic = data
   },
   SET_PROVINCE_COMMON (state, data) {
+    console.log(data)
     state.provinceCommon = data
   },
   SET_PROVINCE_DYNAMIC (state, data) {
+    console.log(data)
     state.prvinceDynamic = data
   },
   SET_COUNTRY_SHAPE (state, data) {
+    console.log(data)
     state.countryShape = data
   }
 }
