@@ -44,9 +44,6 @@ export default {
       'loadCountryShape'
     ]), */
     renderMap: function () {
-      const tempColorMap = d3.scaleLinear().domain(d3.range(0, 10)).range(d3.schemeRdYlBu[11])
-      console.log(tempColorMap)
-
       const tempSvgMap = d3.select('.map-plain')
         .append('svg')
         .attr('class', 'svg-map')
@@ -54,17 +51,16 @@ export default {
         .style('height', '41.5rem')
 
       const tempProjection = geoAitoff()
-        .scale(2400)
+        .scale(200)
         .rotate([-100.6331, -13.2])
+        .translate([300, 320])
 
       const tempPath = geoPath()
         .projection(tempProjection)
-      console.log(tempPath)
 
       const tempMapLayer = tempSvgMap.append('g')
         .attr('id', 'map-layer')
         .classed('map-layer', true)
-      console.log(tempMapLayer)
 
       // this.countryCommon = this.$store.state.main.countryCommon
       // this.countryDynamic = this.$store.state.main.countryDynamic
@@ -77,6 +73,29 @@ export default {
       // console.log(this.provinceCommon)
       // console.log(this.provinceDynamic)
       console.log(this.countryShape)
+
+      tempMapLayer.append('g')
+        .attr('class', 'cont hidden')
+        .selectAll('map-layer')
+        .data(this.countryShape)
+        .enter()
+        .append('path')
+        .attr('d', tempPath)
+        .style('fill', this.fillP())
+        .style('stroke', '#eeeeee')
+        .on('mouseover', this.mouseoverP())
+        .on('mouseout', this.mouseoutP())
+    },
+    fillP: function (d) {
+      const tempColorMap = d3.scaleLinear().domain(d3.range(0, 2)).range(['#F8D5CE', '#B81246'])
+      console.log(d)
+      return tempColorMap(1)
+    },
+    mouseoverP: function (d) {
+      d3.select(this).style('fill', d3.rgb(this.fillP(d)).darker())
+    },
+    mouseoutP: function (d) {
+      d3.select(this).style('fill', this.fillP(d))
     }
   },
   async mounted () {
