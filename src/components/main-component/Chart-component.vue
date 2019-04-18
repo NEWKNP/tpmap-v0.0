@@ -71,7 +71,7 @@ export default {
 }
 .display-plain {
     float: left;
-    width: 27rem;
+    width: 25.5rem;
     height: 36rem;
     padding: 0 1rem;
 }
@@ -83,11 +83,11 @@ export default {
     font-size: 1rem;
 }
 .namealign {
-    width: 14rem;
+    width: 13.5rem;
     text-align: start;
 }
 .textalign {
-    width: 12.5rem;
+    width: 12rem;
     text-align: start;
 }
 .pvname {

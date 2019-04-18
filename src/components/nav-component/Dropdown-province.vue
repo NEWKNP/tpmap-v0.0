@@ -151,16 +151,25 @@ export default {
   },
   methods: {
     ...mapActions([
-      'setID'
+      'setPVID',
+      'setPVName',
+      'setAmIsHidden',
+      'setTbIsHidden',
+      'setVlIsHidden'
     ]),
     changeProvince: function (event) {
       console.log(event)
       if (event === 0) {
         this.pvname = 'ทั้งประเทศ'
+        this.setAmIsHidden(true)
       } else {
         this.pvname = event[1]
+        this.setPVID(event[0])
+        this.setPVName(event[1])
+        this.setAmIsHidden(false)
       }
-      this.setID(event[0])
+      this.setTbIsHidden(true)
+      this.setVlIsHidden(true)
     }
   }
 }

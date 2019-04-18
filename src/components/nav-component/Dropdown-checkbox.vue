@@ -104,6 +104,7 @@ export default {
 }
 .cb {
   display: block;
+  background-color: #ffffff;
   box-shadow: 4px 0 8px rgba(33, 33, 33, 0.2);
 }
 .each-cb {
