@@ -101,10 +101,10 @@ export default {
     }
   },
   async mounted () {
-    await this.$store.dispatch('loadCountryCommon')
-    await this.$store.dispatch('loadCountryDynamic')
-    await this.$store.dispatch('loadProvinceCommon')
-    await this.$store.dispatch('loadProvinceDynamic')
+    // await this.$store.dispatch('loadCountryCommon')
+    // await this.$store.dispatch('loadCountryDynamic')
+    // await this.$store.dispatch('loadProvinceCommon')
+    // await this.$store.dispatch('loadProvinceDynamic')
     await this.$store.dispatch('loadCountryShape')
     await this.renderMap()
   }

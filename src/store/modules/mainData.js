@@ -51,8 +51,24 @@ const actions = {
     })
   },
   loadCountryShape: ({ commit, state }) => {
-    // console.log(prov.features)
-    commit('SET_COUNTRY_SHAPE', prov.features)
+    /*
+    const Pool = require('pg').Pool
+    const pool = new Pool({
+      user: 'postgres',
+      host: 'localhost',
+      database: 'geothdb',
+      password: 'postgres',
+      port: 5432
+    })
+    const sql = `SELECT prov_code AS id,
+                  prov_namt AS name,
+                  geom
+                 FROM prov;`
+    pool.query(sql).then((data) => {
+      commit('SET_COUNTRY_SHAPE', data)
+    })
+    */
+    commit('SET_COUNTRY_SHAPE', prov.json)
   }
 }
 
