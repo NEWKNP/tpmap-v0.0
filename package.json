@@ -11,13 +11,16 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "csv": "^5.1.1",
     "d3-geo-projection": "^2.6.0",
     "dns": "^0.2.2",
     "element-ui": "^2.6.1",
     "express": "^4.16.4",
     "shpjs": "^3.4.3",
     "vue": "^2.5.2",
+    "vue-axios": "^2.1.4",
     "vue-material-icon": "^1.0.1",
     "vue-radar": "^0.1.5",
     "vue-router": "^3.0.1",

@@ -9,11 +9,15 @@ import VueMaterialIcon from 'vue-material-icon'
 import ElementUI from 'element-ui'
 import store from './store'
 import * as d3 from 'd3'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
 Vue.use(VueD3)
+Vue.use(Vuex)
+Vue.use(VueAxios, axios)
 Vue.use(ElementUI)
 Vue.component(VueMaterialIcon.name, VueMaterialIcon)
 

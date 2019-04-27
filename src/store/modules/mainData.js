@@ -1,5 +1,10 @@
-import * as d3 from 'd3'
-import prov from '../../assets/shape/prov.json'
+// import * as d3 from 'd3'
+import axios from 'axios'
+// import ShapeProvider from '@/resources/user_provider'
+// import DataProvider from '@/resources/data_provider'
+// const shapeService = new ShapeProvider()
+// const dataService = new DataProvider()
+// import prov from '../../assets/shape/prov.json'
 
 const state = {
   countryCommon: null,
@@ -22,53 +27,47 @@ const getters = {
 }
 
 const actions = {
-  loadCountryCommon: ({ commit, state }) => {
-    const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_common.csv'
-    d3.csv(mockName).then(function (rows) {
-      // console.log(rows[0])
-      commit('SET_COUNTRY_COMMON', rows[0])
-    })
+  async loadCountryCommon ({commit}) {
+    await axios
+      .get('https://www.tpmap.in.th/public/data/61/61_country_common.csv')
+      .then(response => {
+        console.log(response)
+        // commit('SET_COUNTRY_SHAPE', countryCommon)
+      })
   },
-  loadCountryDynamic: ({ commit, state }) => {
-    const mockName = 'https://www.tpmap.in.th/public/data/61/61_country_11111.csv'
-    d3.csv(mockName).then(function (rows) {
-      // console.log(rows[0])
-      commit('SET_COUNTRY_DYNAMIC', rows[0])
-    })
+  async loadCountryDynamic ({commit}) {
+    await axios
+      .get('https://www.tpmap.in.th/public/data/61/61_country_11111.csv')
+      .then(mock => {
+        console.log(mock)
+        // commit('SET_COUNTRY_SHAPE', countryCommon)
+      })
   },
-  loadProvinceCommon: ({ commit, state }) => {
-    const mockName = 'https://www.tpmap.in.th/public/data/61/61_province_common.csv'
-    d3.csv(mockName).then(function (rows) {
-      // console.log(rows)
-      commit('SET_PROVINCE_COMMON', rows)
-    })
+  async loadProvinceCommon ({commit}) {
+    await axios
+      .get('https://www.tpmap.in.th/public/data/61/61_province_common.csv')
+      .then(mock => {
+        console.log(mock)
+        // commit('SET_COUNTRY_SHAPE', countryCommon)
+      })
   },
-  loadProvinceDynamic: ({ commit, state }) => {
-    const mockName = 'https://www.tpmap.in.th/public/data/61/61_province_11111.csv'
-    d3.csv(mockName).then(function (rows) {
-      // console.log(rows)
-      commit('SET_PROVINCE_DYNAMIC', rows)
-    })
+  async loadProvinceDynamic ({commit}) {
+    await axios
+      .get('https://www.tpmap.in.th/public/data/61/61_province_11111.csv')
+      .then(r => r.data)
+      .then(mock => {
+        console.log(mock)
+        // commit('SET_COUNTRY_SHAPE', countryCommon)
+      })
   },
-  loadCountryShape: ({ commit, state }) => {
-    /*
-    const Pool = require('pg').Pool
-    const pool = new Pool({
-      user: 'postgres',
-      host: 'localhost',
-      database: 'geothdb',
-      password: 'postgres',
-      port: 5432
-    })
-    const sql = `SELECT prov_code AS id,
-                  prov_namt AS name,
-                  geom
-                 FROM prov;`
-    pool.query(sql).then((data) => {
-      commit('SET_COUNTRY_SHAPE', data)
-    })
-    */
-    commit('SET_COUNTRY_SHAPE', prov.json)
+  async loadCountryShape ({commit}) {
+    await axios
+      .get('http://localhost:3000/home/')
+      .then(r => r.data)
+      .then(shape => {
+        console.log(shape.data)
+        commit('SET_COUNTRY_SHAPE', shape.data)
+      })
   }
 }
 

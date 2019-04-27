@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import * as d3 from 'd3'
+// import * as d3 from 'd3'
 // import {geoPath} from 'd3-geo'
 // import {geoAitoff} from 'd3-geo-projection'
-import {mapState} from 'vuex'
+// import {mapState} from 'vuex'
 
 export default {
   name: 'Map-component',
@@ -20,21 +20,21 @@ export default {
     }
   },
   computed: {
-    ...mapState({
+    /* ...mapState({
       countryCommon: state => state.main.countryCommon,
       countryDynamic: state => state.main.countryDynamic,
       provinceCommon: state => state.main.provinceCommon,
       provinceDynamic: state => state.main.provinceDynamic,
       countryShape: state => state.main.countryShape
-    })
+    }) */
   },
-  /* created () {
-    this.loadCountryCommon()
+  created () {
+    /* this.loadCountryCommon()
     this.loadCountryDynamic()
     this.loadProvinceCommon()
     this.loadProvinceDynamic()
-    this.loadCountryShape()
-  }, */
+    this.loadCountryShape() */
+  },
   methods: {
     /* ...mapActions([
       'loadCountryCommon',
@@ -43,8 +43,7 @@ export default {
       'loadProvinceDynamic',
       'loadCountryShape'
     ]), */
-    renderMap: function () {
-      /*
+    /* renderMap: function () {
       const tempSvgMap = d3.select('.map-plain')
         .append('svg')
         .attr('class', 'svg-map')
@@ -62,7 +61,6 @@ export default {
       const tempMapLayer = tempSvgMap.append('g')
         .attr('id', 'map-layer')
         .classed('map-layer', true)
-      */
       // this.countryCommon = this.$store.state.main.countryCommon
       // this.countryDynamic = this.$store.state.main.countryDynamic
       // this.provinceCommon = this.$store.state.main.provinceCommon
@@ -74,7 +72,6 @@ export default {
       // console.log(this.provinceCommon)
       // console.log(this.provinceDynamic)
       console.log(this.countryShape)
-      /*
       tempMapLayer.append('g')
         .attr('class', 'cont hidden')
         .selectAll('map-layer')
@@ -86,8 +83,9 @@ export default {
         .style('stroke', '#eeeeee')
         .on('mouseover', this.mouseoverP())
         .on('mouseout', this.mouseoutP())
-        */
     },
+    */
+    /*
     fillP: function (d) {
       const tempColorMap = d3.scaleLinear().domain(d3.range(0, 2)).range(['#F8D5CE', '#B81246'])
       console.log(d)
@@ -99,15 +97,16 @@ export default {
     mouseoutP: function (d) {
       d3.select(this).style('fill', this.fillP(d))
     }
+    */
   },
-  async mounted () {
-    // await this.$store.dispatch('loadCountryCommon')
-    // await this.$store.dispatch('loadCountryDynamic')
-    // await this.$store.dispatch('loadProvinceCommon')
-    // await this.$store.dispatch('loadProvinceDynamic')
+  /* async mounted () {
+    await this.$store.dispatch('loadCountryCommon')
+    await this.$store.dispatch('loadCountryDynamic')
+    await this.$store.dispatch('loadProvinceCommon')
+    await this.$store.dispatch('loadProvinceDynamic')
     await this.$store.dispatch('loadCountryShape')
     await this.renderMap()
-  }
+  } */
 }
 </script>
 
